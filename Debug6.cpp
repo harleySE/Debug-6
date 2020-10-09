@@ -14,6 +14,8 @@ meant to check if the code is actually in order.
 */
 
 // Array that needs sorting
+// add a variable for temp
+int a;
 int arr[] = {20,12,65,45,98,65,85,12,54,78,55,13,50,19,84,20,43,10};
 int arrSize =  sizeof(arr)/sizeof(arr[0]);
 int main() {
@@ -22,8 +24,10 @@ int main() {
   for (unsigned j=arrSize;j>0;j--){
     for (unsigned i=1;i<j;i++){
       if (arr[i-1]>arr[i]){
-        arr[i-1] = arr[i];
-        arr[i] = arr[i-1];
+        //changed to temp switch method
+        a=arr[i];
+        arr[i]=arr[i-1];
+        arr[i-1]=a;
         }
     }
   }
